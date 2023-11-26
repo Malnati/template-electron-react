@@ -1,0 +1,57 @@
+{
+  "name": "electron-react",
+  "productName": "electron-react",
+  "version": "1.0.0",
+  "description": "Proposta de aplicativo para o Auxilio do MDS",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "run-p electron-forge:start watch:*",
+    "electron-forge:start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "watch:webpack": "webpack --watch",
+    "monitor": "chokidar 'src/**/*' -c 'bash -c ./commit-msg'",
+    "clean": "npm cache clean --force && rm -rf 'node_modules' '.webpack' && npm install -y",
+    "commit": "./commit-msg"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Malnati",
+    "email": "ricardomalnati@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.23.2",
+    "@babel/preset-react": "7.22.15",
+    "@electron-forge/cli": "6.4.2",
+    "@electron-forge/maker-deb": "6.4.2",
+    "@electron-forge/maker-rpm": "6.4.2",
+    "@electron-forge/maker-squirrel": "6.4.2",
+    "@electron-forge/maker-zip": "6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "6.4.2",
+    "@electron-forge/plugin-webpack": "6.4.2",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "babel-loader": "9.1.3",
+    "chokidar-cli": "3.0.0",
+    "css-loader": "6.8.1",
+    "electron": "27.0.3",
+    "file-loader": "^6.2.0",
+    "node-loader": "2.0.0",
+    "npm-run-all": "4.1.5",
+    "style-loader": "3.3.3"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.17",
+    "@mui/system": "^5.14.17",
+    "@mui/x-data-grid": "^6.18.1",
+    "electron-squirrel-startup": "1.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.18.0"
+  }
+}
