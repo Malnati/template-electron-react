@@ -1,8 +1,8 @@
 {
-  "name": "electron-react",
-  "productName": "electron-react",
+  "name": "template-electron-react",
+  "productName": "template-electron-react",
   "version": "1.0.0",
-  "description": "Proposta de aplicativo para o Auxilio do MDS",
+  "description": "Template Electron React",
   "main": ".webpack/main",
   "scripts": {
     "start": "run-p electron-forge:start watch:*",
