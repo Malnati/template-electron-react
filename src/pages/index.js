@@ -18,8 +18,6 @@ const container = document.createElement('div');
 document.body.appendChild(container);
 const root = createRoot(container);
 
-setBgImage();
-
 root.render(
     <ThemeProvider theme={theme}>
         <Router>
@@ -30,3 +28,7 @@ root.render(
         </Router>
     </ThemeProvider>
 );
+
+setBgImage();
+
+console.log('index.js loaded successfully');

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -28,6 +29,9 @@ export default function Mainboard() {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
+  useEffect(() => {
+    console.log('Mainboard component mounted successfully');
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

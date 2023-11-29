@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import EmailField from '../component/EmailField';
@@ -21,6 +22,9 @@ const paperStyle = {
 
 const Login = () => {
     const navigate = useNavigate();
+    useEffect(() => {
+        console.log('Login component mounted successfully');
+    }, []);
 
     const handleValidEmail = () => {
         //navigate('/main');
