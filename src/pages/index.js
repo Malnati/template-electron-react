@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import backgroundImage from '../assets/background.jpg';
+import backgroundImage from '../images/background.jpg';
 import Login from './Login'; 
 import MainBoard from './MainBoard';
 import { ThemeProvider } from '@mui/material/styles';
@@ -24,7 +24,6 @@ root.render(
     <ThemeProvider theme={theme}>
         <Router>
             <Routes>
-                <Route path="/" element={<Login />} />
                 <Route path="/main_window" element={<Login />} />
                 <Route path="/main" element={<MainBoard />} />
             </Routes>

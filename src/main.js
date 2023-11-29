@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, session } = require('electron');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -7,20 +7,32 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
+  
+  // Clear the cache
+  session.defaultSession.clearCache();
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 1366,
     height: 768,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      nodeIntegration: true, // Enable Node.js integration
+      enableRemoteModule: true, // Enable remote module
+      contextIsolation: true, // Disable context isolation
+      autoHideMenuBar: true, // Auto-hide menu bar
+      webSecurity: false
     },
   });
-
-  // and load the index.html of the app.
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  const isDev = !app.isPackaged;
+  if (isDev) {
+    // and load the index.html of the app.
+    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  } else {
+    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+    // and load the index.html of the app.
+    //mainWindow.loadURL(`file://${path.join(__dirname, './pages/index.html')}`);
+  }
 };
 
 // This method will be called when Electron has finished

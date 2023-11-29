@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = [
   // Add support for native node modules
   {
@@ -17,7 +19,7 @@ module.exports = [
     },
   },
   {
-    test: /\.jsx?$/,
+    test: /\.(js|jsx)$/,
     use: {
       loader: 'babel-loader',
       options: {
@@ -32,26 +34,20 @@ module.exports = [
       {
         loader: 'file-loader',
         options: {
-          name: 'assets/[name].[ext]',
+          name: 'images/[name].[ext]',
           outputPath: 'images',
+          publicPath: 'images',
+          /*
+          publicPath: (url, resourcePath, context) => {
+            if (process.env.NODE_ENV === 'production') {
+              return `./${url}`;
+            } else {
+              return `file://${path.resolve(__dirname, '', url)}`;
+            }
+          },
+          */ 
         },
       },
     ],
   },
-  // Put your webpack loader rules in this array.  This is where you would put
-  // your ts-loader configuration for instance:
-  /**
-   * Typescript Example:
-   *
-   * {
-   *   test: /\.tsx?$/,
-   *   exclude: /(node_modules|.webpack)/,
-   *   loaders: [{
-   *     loader: 'ts-loader',
-   *     options: {
-   *       transpileOnly: true
-   *     }
-   *   }]
-   * }
-   */
 ];
