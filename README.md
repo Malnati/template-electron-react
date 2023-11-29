@@ -36,6 +36,33 @@ This repository is a ready-to-use template for Electron + React projects, licens
    npm start
    ```
 
+## Generate a GitHub Personal Access Token
+
+To publish your Electron app to GitHub, you need to generate a personal access token. Follow these steps:
+
+1. **Access GitHub Settings:**
+   - Go to your GitHub profile.
+   - Click on your profile picture in the top right corner and select "Settings".
+
+2. **Navigate to Developer Settings:**
+   - In the settings menu, find and click on "Developer settings".
+
+3. **Personal Access Tokens:**
+   - Select "Personal access tokens" from the sidebar.
+   - Click on "Generate new token".
+
+4. **Token Settings:**
+   - Give your token a descriptive name.
+   - Set the necessary scopes (e.g., "repo" for full repository access).
+   - Click "Generate token" at the bottom.
+
+5. **Copy and Secure Your Token:**
+   - **Important:** Copy your new personal access token now. You won’t be able to see it again!
+   - Securely store the token for future use.
+
+6. **Set Up Environment Variable:**
+   - Add the token to your environment variables as `GITHUB_TOKEN`.
+
 ## Explore the Template
 
 Navigate through the `src` directory to understand the structure. Customize components and configurations to align with your project requirements.
@@ -61,4 +88,3 @@ Contributions are highly appreciated. To contribute, please fork the repository 
 This template is designed to reduce setup time and complexity, allowing you to focus on building innovative Electron-React applications.
 
 Author: Ricardo Malnati
-```
