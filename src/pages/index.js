@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import backgroundImage from '../images/background.jpg';
 import Login from './Login'; 
 import MainBoard from './MainBoard';
@@ -14,21 +14,21 @@ const setBgImage = () => {
     document.body.style.backgroundAttachment = 'fixed';
 }
 
+
 const container = document.createElement('div');
 document.body.appendChild(container);
 const root = createRoot(container);
 
+setBgImage();
+
 root.render(
     <ThemeProvider theme={theme}>
-        <Router>
-            <Routes>
-                <Route path="/main_window" element={<Login />} />
-                <Route path="/main" element={<MainBoard />} />
-            </Routes>
-        </Router>
+        <MemoryRouter initialEntries={['/login']}>
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/mainboard" element={<MainBoard />} />
+                </Routes>
+        </MemoryRouter>
     </ThemeProvider>
 );
 
-setBgImage();
-
-console.log('index.js loaded successfully');

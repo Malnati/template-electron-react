@@ -19,12 +19,14 @@ const paperStyle = {
     alignItems: 'center',
     padding: '30px', 
 }
-
-const Login = () => {
+    
+const Login = (props) => {
     const navigate = useNavigate();
     useEffect(() => {
-        console.log('Login component mounted successfully');
+        //console.log('Login component mounted successfully');
     }, []);
+
+    const { title } = props;
 
     const handleValidEmail = () => {
         //navigate('/main');
@@ -35,17 +37,17 @@ const Login = () => {
     };
 
     const handleValidPassword = () => {
-        navigate('/main');
+        navigate('/mainboard');
     };
 
     const handleInvalidPassword = () => {
-        navigate('/main');
+        navigate('/mainboard');
     };
 
     return (
             <Paper style={paperStyle} elevation={3}>
                 <Typography color="inherit" variant="h5" component="h1">
-                    Login
+                    { title?title:"Login" }
                 </Typography>
                 <EmailField onValidEmail={handleValidEmail} onInvalidEmail={handleInvalidEmail} />
                 <PasswordField onValidPassword={handleValidPassword} onInvalidPassword={handleInvalidPassword} />
