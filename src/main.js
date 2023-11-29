@@ -24,14 +24,20 @@ const createWindow = () => {
       webSecurity: false
     },
   });
-  const isDev = !app.isPackaged;
-  if (isDev) {
+  const isPackaged = app.isPackaged;
+  if (isPackaged) {
     // and load the index.html of the app.
+    console.log("\n **********************************");
+    console.log("\n *    app.isPackaged ==  TRUE     *");
+    console.log("\n **********************************");
     mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
   } else {
     mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
     // and load the index.html of the app.
     //mainWindow.loadURL(`file://${path.join(__dirname, './pages/index.html')}`);
+    console.log("\n **********************************");
+    console.log("\n *    app.isPackaged ==  FALSE    *");
+    console.log("\n **********************************");
   }
 };
 

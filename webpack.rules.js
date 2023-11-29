@@ -35,17 +35,8 @@ module.exports = [
         loader: 'file-loader',
         options: {
           name: 'images/[name].[ext]',
-          outputPath: 'images',
-          publicPath: 'images',
-          /*
-          publicPath: (url, resourcePath, context) => {
-            if (process.env.NODE_ENV === 'production') {
-              return `./${url}`;
-            } else {
-              return `file://${path.resolve(__dirname, '', url)}`;
-            }
-          },
-          */ 
+          outputPath: './',
+          publicPath: '../',
         },
       },
     ],
