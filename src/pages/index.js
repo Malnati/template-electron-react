@@ -14,9 +14,12 @@ const setBgImage = () => {
     document.body.style.backgroundAttachment = 'fixed';
 }
 
+
 const container = document.createElement('div');
 document.body.appendChild(container);
 const root = createRoot(container);
+
+setBgImage();
 
 root.render(
     <ThemeProvider theme={theme}>
@@ -29,6 +32,3 @@ root.render(
     </ThemeProvider>
 );
 
-setBgImage();
-
-console.log('index.js loaded successfully');
