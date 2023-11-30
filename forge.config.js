@@ -1,6 +1,7 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: './src/images/background.icns',
   },
   rebuildConfig: {},
   makers: [
@@ -10,8 +11,8 @@ module.exports = {
         name: 'template-electron-react',
         authors: 'Malnati',
         exe: 'template-electron-react.exe',
-        setupIcon: 'src/images/background.ico',
-        loadingGif: 'src/images/background.gif'
+        setupIcon: './src/images/background.ico',
+        loadingGif: './src/images/background.gif'
       },
     },
     {
@@ -24,7 +25,7 @@ module.exports = {
         options: {
           maintainer: 'Malnati',
           homepage: 'https://github.com/Malnati/template-electron-react',
-          icon: 'src/images/background.png'
+          icon: './src/images/background.png'
         }
       },
     },
@@ -34,7 +35,7 @@ module.exports = {
         options: {
           maintainer: 'Malnati',
           homepage: 'https://github.com/Malnati/template-electron-react',
-          icon: 'src/images/background.png'
+          icon: './src/images/background.png'
         }
       },
     },
