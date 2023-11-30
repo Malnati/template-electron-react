@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import backgroundImage from '../images/background.jpg';
+import backgroundImage from '../images/brazil-flag-4517×2992.png';
 import Login from './Login'; 
 import MainBoard from './MainBoard';
 import { ThemeProvider } from '@mui/material/styles';
