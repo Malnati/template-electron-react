@@ -1,6 +1,7 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: './src/images/brazil-flag-256x256.icns',
   },
   rebuildConfig: {},
   makers: [
@@ -10,8 +11,8 @@ module.exports = {
         name: 'template-electron-react',
         authors: 'Malnati',
         exe: 'template-electron-react.exe',
-        setupIcon: 'src/images/background.ico',
-        loadingGif: 'src/images/background.gif'
+        setupIcon: './src/images/brazil-flag-256x256.ico',
+        loadingGif: './src/images/brazil-flag-4517×2992.gif'
       },
     },
     {
@@ -24,7 +25,7 @@ module.exports = {
         options: {
           maintainer: 'Malnati',
           homepage: 'https://github.com/Malnati/template-electron-react',
-          icon: 'src/images/background.png'
+          icon: './src/images/brazil-flag-64x64.png'
         }
       },
     },
@@ -34,7 +35,7 @@ module.exports = {
         options: {
           maintainer: 'Malnati',
           homepage: 'https://github.com/Malnati/template-electron-react',
-          icon: 'src/images/background.png'
+          icon: './src/images/brazil-flag-64x64.png'
         }
       },
     },
